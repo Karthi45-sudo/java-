@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();                 //value of input no of childrens
+        int[] a = new int[n];
+        
+        for (int i = 0; i < n; i++) {
+            a[i] = scanner.nextInt();
+        }
+        int sum = 0;                                //sum variable
+        for (int i = 0; i < n; i++) {
+            sum += a[i];
+        }
+        
+        for (int i = 0; i < n; i++) {
+            System.out.print((sum - a[i]) + " "); //total choc-a[i]
+        }
+    }
+}
+
+
