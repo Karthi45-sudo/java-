@@ -1,0 +1,33 @@
+import java.util.Scanner;                   //header file
+public class Main {
+    static boolean isPrime(int n) {
+        if (n <= 1)
+            return false;
+        for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0)
+                return false;
+        }
+        return true;
+    }
+
+    static int primeSum(int N) {
+        int n = N;
+        int res = 0;
+        int sum = 0;
+        while (n != 0) {                                //unnown count (while)
+            int rem = n % 10;                           
+            if (isPrime(rem)) {
+                sum += rem;
+            }
+            res = res * 10 + rem;
+            n /= 10;
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();                      //value intialize
+        System.out.println(primeSum(n));
+    }
+}
