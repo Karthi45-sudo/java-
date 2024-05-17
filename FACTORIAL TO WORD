@@ -1,0 +1,41 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	
+	    String s="word";
+	  
+	    char d[]=s.toCharArray();
+	    char a[]=s.toCharArray();
+	    int r[]=new int[d.length];
+	    Arrays.sort(a);
+	    for(int i=0;i<a.length;i++)
+	    {
+	        
+	        for(int j=0;j<a.length;j++)
+	        {
+	            if(d[i]==a[j])
+	            {
+	                r[i]=j+1;
+	                break;
+	            }
+	        }
+	    }
+	    
+	        int l=a.length;
+	    for(int i=0;i<a.length;i++)
+	    {
+	        System.out.print(r[i]*fact(l--)+" ");
+	         
+	    }
+	}
+	public static int fact(int n)
+	{
+	    int m=1;
+	    for(int i=1;i<=n;i++)
+	    {
+	        m=m*i;
+	    }
+	    return m;
+	}
+}
